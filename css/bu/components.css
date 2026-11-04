@@ -1,0 +1,658 @@
+
+/* RECRUITMENT PROCESS */
+
+.process-overview {
+  display: grid;
+  grid-template-columns: repeat(7,minmax(0,1fr));
+  gap: 8px;
+  margin-bottom: 23px;
+}
+
+.step-item {
+  padding: 13px 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  color: #657185;
+  font-size: 10px;
+  transition: .2s;
+}
+
+.step-item span {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.step-item.selected {
+  background: var(--primary-light);
+  border-color: #9bb5f3;
+  color: var(--primary);
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 15px;
+}
+
+.task-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #fff;
+  transition: .2s;
+}
+
+.task-card:hover {
+  border-color: #b5c7f0;
+}
+
+.task-card.task-done {
+  border-color: #a8dfc4;
+  background: #fbfefc;
+}
+
+.task-number {
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.task-card h3 {
+  font-size: 15px;
+}
+
+.task-card p {
+  font-size: 11px;
+  min-height: 35px;
+}
+
+.task-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0;
+}
+
+.task-fields span {
+  padding: 5px 8px;
+  background: #f1f4f9;
+  color: #65738a;
+  border-radius: 5px;
+  font-size: 9px;
+}
+
+.task-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-status {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.task-status input {
+  width: auto;
+  accent-color: var(--success);
+}
+
+.task-data-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.task-data-item {
+  padding: 10px;
+  background: #f7f9fc;
+  border-radius: 7px;
+}
+
+.task-data-item span {
+  display: block;
+  color: #8993a3;
+  font-size: 10px;
+}
+
+.task-data-item strong {
+  font-size: 13px;
+}
+
+.task-card-actions {
+  margin-top: 15px;
+}
+
+.modal-shortcuts {
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.modal-shortcuts .btn {
+  margin: 0 5px 5px 0;
+}
+
+/* QUICK ACTIONS */
+
+.quick-task-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 10px;
+}
+
+.quick-task-grid a {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 14px;
+  background: #fff;
+  color: #566276;
+  font-size: 11px;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.quick-task-grid a:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: #f8faff;
+}
+
+/* CALENDAR */
+
+.calendar-container {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.calendar-toolbar {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.calendar-toolbar h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.calendar-toolbar button {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 7px;
+  padding: 7px 12px;
+  color: #596579;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7,minmax(0,1fr));
+}
+
+.calendar-weekday {
+  text-align: center;
+  padding: 12px 4px;
+  color: #8792a2;
+  font-size: 10px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--line);
+}
+
+.calendar-day {
+  min-height: 105px;
+  padding: 9px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  transition: .15s;
+}
+
+.calendar-day:hover {
+  background: #f7f9ff;
+}
+
+.calendar-day.today {
+  background: #f2f6ff;
+}
+
+.calendar-day.selected-day {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.calendar-day.other-month {
+  background: #fafbfd;
+  color: #c3c9d2;
+}
+
+.calendar-day-number {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.calendar-event {
+  margin-top: 5px;
+  padding: 4px 5px;
+  border-radius: 4px;
+  background: #edf2ff;
+  color: #4268c5;
+  font-size: 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendar-event.interview {
+  background: #f2edff;
+  color: #8064c5;
+}
+
+.calendar-event.meeting {
+  background: #eaf8f1;
+  color: #238c64;
+}
+
+.calendar-event.deadline {
+  background: #fff2e6;
+  color: #bd762d;
+}
+
+.calendar-day-detail {
+  padding: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.calendar-day-detail h3 {
+  margin-bottom: 14px;
+}
+
+/* KPI */
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 14px;
+}
+
+.kpi-card {
+  padding: 19px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.kpi-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.kpi-card strong {
+  display: block;
+  font-size: 26px;
+  margin-top: 8px;
+}
+
+.kpi-simulator {
+  margin-top: 25px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.simulator-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 15px;
+}
+
+/* APPLICANTS */
+
+.applicant-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+}
+
+.applicant-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 19px;
+}
+
+.applicant-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.applicant-name {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.applicant-meta {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.stage-badge {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: #edf2ff;
+  color: #4169c9;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.stage-badge.pass {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.stage-badge.fail {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* SKILL RADAR */
+
+.skill-panel {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(220px,1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.radar-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+.radar-card svg {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+}
+
+.skill-input-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 13px;
+}
+
+.skill-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-input label {
+  color: #68758a;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.skill-input input {
+  font-weight: 700;
+}
+
+/* ONBOARDING */
+
+.onboarding-progress {
+  height: 8px;
+  border-radius: 20px;
+  background: #eef1f5;
+  overflow: hidden;
+  margin: 15px 0 8px;
+}
+
+.onboarding-progress span {
+  display: block;
+  height: 100%;
+  background: var(--success);
+}
+
+/* NOTES */
+
+.notes-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.notes-toolbar input {
+  max-width: 350px;
+}
+
+.note-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+}
+
+.note-card-top,
+.note-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-card-top {
+  font-size: 9px;
+  color: var(--muted);
+}
+
+.note-preview {
+  flex: 1;
+  color: #778295;
+  font-size: 11px;
+  margin: 10px 0 18px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.note-card-bottom {
+  justify-content: flex-start;
+}
+
+.note-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-title-input {
+  font-size: 19px;
+  font-weight: 800;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 12px 0;
+  margin: 10px 0 18px;
+}
+
+.note-mode-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.note-mode {
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: #697586;
+  font-size: 11px;
+}
+
+.note-mode.active {
+  background: var(--primary-light);
+  border-color: #a8bdf0;
+  color: var(--primary);
+}
+
+.wysiwyg-toolbar,
+.drawing-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 10px;
+  background: #f7f9fc;
+  border: 1px solid var(--line);
+  border-radius: 8px 8px 0 0;
+}
+
+.wysiwyg-toolbar button {
+  min-width: 31px;
+  min-height: 30px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: #526078;
+  font-size: 11px;
+}
+
+.color-tool {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+}
+
+.color-tool input {
+  width: 27px;
+  height: 27px;
+  padding: 2px;
+}
+
+.wysiwyg-editor {
+  min-height: 280px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  outline: none;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.wysiwyg-editor:empty:before {
+  content: attr(data-placeholder);
+  color: #b1b8c3;
+}
+
+.wysiwyg-editor:focus {
+  border-color: #9bb4ed;
+}
+
+.drawing-board {
+  border: 1px solid var(--line);
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.drawing-board canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+  cursor: crosshair;
+  background-color: #fff;
+}
+
+.drawing-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+}
+
+.drawing-toolbar input {
+  width: auto;
+}
+
+.note-editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.note-editor-footer > div {
+  display: flex;
+  gap: 8px;
+}
+
+/* BACKUP */
+
+.backup-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 13px;
+}
+
+.backup-card {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.backup-card strong {
+  font-size: 21px;
+  display: block;
+}
+
+.backup-card span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* HR TRENDS */
+
+.trend-grid {
+  margin-bottom: 25px;
+}
+
+.guide-box {
+  padding: 12px;
+  background: #f7f9fc;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.guide-box strong {
+  font-size: 10px;
+  color: var(--primary);
+}
+
+.guide-box p {
+  font-size: 10px;
+  margin: 6px 0 0;
+}
