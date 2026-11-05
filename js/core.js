@@ -82,21 +82,29 @@ window.DB = (() => {
 
   const PREFIX = "hireflow_";
 
-  const DEFAULT_DATA = {
-    applicants: [],
-    calendar: [],
-    onboarding: [],
-    notes: [],
-    tasks: {},
-    kpi: {
-      target: 10,
-      applicants: 0,
-      interviews: 0,
-      hired: 0,
-      budget: 0,
-      actualCost: 0
-    }
-  };
+   const DEFAULT_DATA = {
+     applicants: [],
+     calendar: [],
+     onboarding: [],
+     notes: [],
+   
+     // 업무 양식 저장
+     taskForms: {},
+   
+     // 업무 진행 상태 저장
+     taskProgress: {},
+   
+     tasks: {},
+   
+     kpi: {
+       target: 10,
+       applicants: 0,
+       interviews: 0,
+       hired: 0,
+       budget: 0,
+       actualCost: 0
+     }
+   };
 
   let initialized = false;
 
